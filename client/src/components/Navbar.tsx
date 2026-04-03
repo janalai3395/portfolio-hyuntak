@@ -107,16 +107,24 @@ export default function Navbar() {
       {isMenuOpen && (
         <div className="md:hidden bg-white border-t border-slate-100 shadow-lg">
           <ul className="container py-3 flex flex-col gap-1">
-            {NAV_LINKS.map((link) => (
-              <li key={link.href}>
-                <button
-                  onClick={() => handleNavClick(link.href)}
-                  className="w-full text-left px-4 py-3 rounded-md text-sm font-medium text-slate-700 hover:text-blue-600 hover:bg-blue-50 transition-colors"
-                >
-                  {link.label}
-                </button>
-              </li>
-            ))}
+            {NAV_LINKS.map((link) => {
+              const id = link.href.replace("#", "");
+              const isActive = activeSection === id;
+              return (
+                <li key={link.href}>
+                  <button
+                    onClick={() => handleNavClick(link.href)}
+                    className={`w-full text-left px-4 py-3 rounded-md text-sm font-medium transition-colors ${
+                      isActive
+                        ? "text-blue-600 bg-blue-50"
+                        : "text-slate-700 hover:text-blue-600 hover:bg-blue-50"
+                    }`}
+                  >
+                    {link.label}
+                  </button>
+                </li>
+              );
+            })}
           </ul>
         </div>
       )}
