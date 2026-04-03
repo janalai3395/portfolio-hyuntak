@@ -94,7 +94,7 @@ export default function SkillsSection() {
             return (
               <div
                 key={cat.category}
-                className={`reveal p-6 rounded-xl border ${colors.bg} ${colors.border} hover:shadow-md transition-all duration-300`}
+                className={`reveal p-6 rounded-xl border ${colors.bg} ${colors.border} hover:shadow-md hover:bg-blue-50 hover:border-blue-200 transition-all duration-300`}
                 style={{ transitionDelay: `${i * 0.08}s` }}
               >
                 <div className="flex items-center gap-2 mb-4">
