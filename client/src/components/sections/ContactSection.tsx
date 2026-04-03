@@ -27,10 +27,10 @@ export default function ContactSection() {
             {/* Email */}
             <a
               href="mailto:example@email.com"
-              className="group p-8 bg-white rounded-2xl border border-slate-100 shadow-sm hover:shadow-lg hover:border-blue-200 transition-all duration-300 hover:-translate-y-1 text-center"
+              className="group p-8 bg-white rounded-2xl border border-slate-100 shadow-sm hover:shadow-xl hover:border-blue-300 hover:bg-blue-50 transition-all duration-300 hover:-translate-y-2 text-center"
             >
-              <div className="w-14 h-14 bg-blue-50 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:bg-blue-100 transition-colors">
-                <Mail className="w-7 h-7 text-blue-600" />
+              <div className="w-14 h-14 bg-blue-50 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:bg-blue-200 transition-all duration-300 group-hover:scale-110">
+                <Mail className="w-7 h-7 text-blue-600 group-hover:text-blue-700 transition-colors" />
               </div>
               <h3 className="font-bold text-slate-900 mb-1">이메일</h3>
               <p className="text-sm text-slate-500 font-mono">example@email.com</p>
@@ -44,10 +44,10 @@ export default function ContactSection() {
               href="https://github.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="group p-8 bg-white rounded-2xl border border-slate-100 shadow-sm hover:shadow-lg hover:border-slate-300 transition-all duration-300 hover:-translate-y-1 text-center"
+              className="group p-8 bg-white rounded-2xl border border-slate-100 shadow-sm hover:shadow-xl hover:border-slate-400 hover:bg-slate-50 transition-all duration-300 hover:-translate-y-2 text-center"
             >
-              <div className="w-14 h-14 bg-slate-100 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:bg-slate-200 transition-colors">
-                <Github className="w-7 h-7 text-slate-700" />
+              <div className="w-14 h-14 bg-slate-100 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:bg-slate-300 transition-all duration-300 group-hover:scale-110">
+                <Github className="w-7 h-7 text-slate-700 group-hover:text-slate-900 transition-colors" />
               </div>
               <h3 className="font-bold text-slate-900 mb-1">GitHub</h3>
               <p className="text-sm text-slate-500 font-mono">@github-username</p>
@@ -68,9 +68,9 @@ export default function ContactSection() {
             </p>
             <a
               href="mailto:example@email.com"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-white text-blue-600 font-semibold rounded-lg hover:bg-blue-50 transition-colors shadow-sm"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-white text-blue-600 font-semibold rounded-lg hover:bg-blue-50 hover:shadow-lg hover:scale-105 transition-all duration-300 shadow-sm"
             >
-              <Mail className="w-4 h-4" />
+              <Mail className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               이메일 보내기
             </a>
           </div>
