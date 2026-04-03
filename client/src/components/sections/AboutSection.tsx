@@ -24,7 +24,7 @@ const HIGHLIGHTS = [
 
 export default function AboutSection() {
   return (
-    <section id="about" className="py-24 bg-white">
+    <section id="about" className="py-24 bg-slate-50">
       <div className="container">
         {/* Section Header */}
         <div className="reveal mb-16">
@@ -62,11 +62,11 @@ export default function AboutSection() {
 
             {/* Info grid */}
             <div className="mt-8 grid grid-cols-2 gap-4">
-              <div className="p-4 bg-slate-50 rounded-lg border border-slate-100">
+              <div className="p-4 bg-white rounded-lg border border-slate-100">
                 <p className="text-xs text-slate-400 font-mono mb-1">학번</p>
                 <p className="font-semibold text-slate-800">202395013</p>
               </div>
-              <div className="p-4 bg-slate-50 rounded-lg border border-slate-100">
+              <div className="p-4 bg-white rounded-lg border border-slate-100">
                 <p className="text-xs text-slate-400 font-mono mb-1">전공</p>
                 <p className="font-semibold text-slate-800">컴퓨터 관련 학과</p>
               </div>

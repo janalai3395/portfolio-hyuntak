@@ -64,7 +64,7 @@ const CATEGORY_COLORS: Record<string, { bg: string; border: string; text: string
 
 export default function SkillsSection() {
   return (
-    <section id="skills" className="py-24 bg-slate-50">
+    <section id="skills" className="py-24 bg-white">
       <div className="container">
         {/* Section Header */}
         <div className="reveal mb-16">
