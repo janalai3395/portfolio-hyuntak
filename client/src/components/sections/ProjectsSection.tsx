@@ -54,7 +54,7 @@ export default function ProjectsSection() {
           {PROJECTS.map((project, i) => (
             <div
               key={project.id}
-              className="reveal project-card bg-white rounded-2xl border border-slate-100 shadow-sm overflow-hidden"
+              className="reveal project-card bg-white rounded-2xl border border-slate-100 shadow-sm overflow-hidden transition-all duration-300 hover:bg-blue-50 hover:border-blue-200"
               style={{ transitionDelay: `${i * 0.1}s` }}
             >
               <div className="grid grid-cols-1 lg:grid-cols-5 gap-0">
