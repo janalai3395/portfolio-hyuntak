@@ -6,16 +6,16 @@ import { Mail, Github, MessageSquare } from "lucide-react";
 
 export default function ContactSection() {
   return (
-    <section id="contact" className="py-24 bg-white">
+    <section id="contact" className="py-24 bg-white dark:bg-slate-950">
       <div className="container">
         {/* Section Header */}
         <div className="reveal mb-16 text-center">
-          <p className="text-sm font-mono text-blue-600 mb-2 tracking-widest uppercase">05. Contact</p>
-          <h2 className="text-3xl lg:text-4xl font-extrabold text-slate-900 mb-4">
+          <p className="text-sm font-mono text-blue-600 dark:text-blue-400 mb-2 tracking-widest uppercase">05. Contact</p>
+          <h2 className="text-3xl lg:text-4xl font-extrabold text-slate-900 dark:text-white mb-4">
             연락하기
           </h2>
           <div className="w-12 h-1 bg-blue-600 rounded-full mx-auto mb-6" />
-          <p className="text-slate-500 max-w-md mx-auto">
+          <p className="text-slate-500 dark:text-slate-400 max-w-md mx-auto">
             프로젝트 협업이나 채용 관련 문의는 언제든지 환영합니다.
             아래 채널로 연락해 주세요.
           </p>
@@ -27,14 +27,14 @@ export default function ContactSection() {
             {/* Email */}
             <a
               href="mailto:example@email.com"
-              className="group p-8 bg-white rounded-2xl border border-slate-100 shadow-sm hover:shadow-xl hover:border-blue-300 hover:bg-blue-50 transition-all duration-300 hover:-translate-y-2 text-center"
+              className="group p-8 bg-white dark:bg-slate-800 rounded-2xl border border-slate-100 dark:border-slate-700 shadow-sm hover:shadow-xl hover:border-blue-300 dark:hover:border-blue-700 hover:bg-blue-50 dark:hover:bg-blue-950 transition-all duration-300 hover:-translate-y-2 text-center"
             >
-              <div className="w-14 h-14 bg-blue-50 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:bg-blue-200 transition-all duration-300 group-hover:scale-110">
-                <Mail className="w-7 h-7 text-blue-600 group-hover:text-blue-700 transition-colors" />
+              <div className="w-14 h-14 bg-blue-50 dark:bg-blue-950 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:bg-blue-200 dark:group-hover:bg-blue-800 transition-all duration-300 group-hover:scale-110">
+                <Mail className="w-7 h-7 text-blue-600 dark:text-blue-400 group-hover:text-blue-700 dark:group-hover:text-blue-300 transition-colors" />
               </div>
-              <h3 className="font-bold text-slate-900 mb-1">이메일</h3>
-              <p className="text-sm text-slate-500 font-mono">example@email.com</p>
-              <span className="mt-3 inline-block text-xs text-blue-600 font-medium group-hover:underline">
+              <h3 className="font-bold text-slate-900 dark:text-white mb-1">이메일</h3>
+              <p className="text-sm text-slate-500 dark:text-slate-400 font-mono">example@email.com</p>
+              <span className="mt-3 inline-block text-xs text-blue-600 dark:text-blue-400 font-medium group-hover:underline">
                 메일 보내기 →
               </span>
             </a>
@@ -46,11 +46,11 @@ export default function ContactSection() {
               rel="noopener noreferrer"
               className="group p-8 bg-white rounded-2xl border border-slate-100 shadow-sm hover:shadow-xl hover:border-slate-400 hover:bg-slate-50 transition-all duration-300 hover:-translate-y-2 text-center"
             >
-              <div className="w-14 h-14 bg-slate-100 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:bg-slate-300 transition-all duration-300 group-hover:scale-110">
-                <Github className="w-7 h-7 text-slate-700 group-hover:text-slate-900 transition-colors" />
+              <div className="w-14 h-14 bg-slate-100 dark:bg-slate-700 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:bg-slate-300 dark:group-hover:bg-slate-600 transition-all duration-300 group-hover:scale-110">
+                <Github className="w-7 h-7 text-slate-700 dark:text-slate-300 group-hover:text-slate-900 dark:group-hover:text-white transition-colors" />
               </div>
-              <h3 className="font-bold text-slate-900 mb-1">GitHub</h3>
-              <p className="text-sm text-slate-500 font-mono">@github-username</p>
+              <h3 className="font-bold text-slate-900 dark:text-white mb-1">GitHub</h3>
+              <p className="text-sm text-slate-500 dark:text-slate-400 font-mono">@github-username</p>
               <span className="mt-3 inline-block text-xs text-slate-600 font-medium group-hover:underline">
                 프로필 보기 →
               </span>

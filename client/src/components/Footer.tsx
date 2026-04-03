@@ -8,7 +8,7 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-slate-900 text-slate-400 py-10">
+    <footer className="bg-slate-900 dark:bg-slate-950 text-slate-400 dark:text-slate-500 py-10">
       <div className="container">
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
           {/* Logo */}
@@ -20,7 +20,7 @@ export default function Footer() {
           </div>
 
           {/* Copyright */}
-          <p className="text-xs text-slate-500">
+          <p className="text-xs text-slate-500 dark:text-slate-600">
             © {currentYear} 김현탁. Built with React & Tailwind CSS.
           </p>
 
@@ -32,7 +32,7 @@ export default function Footer() {
                 onClick={() => {
                   document.getElementById(item.toLowerCase())?.scrollIntoView({ behavior: "smooth" });
                 }}
-                className="hover:text-blue-400 transition-colors"
+                className="hover:text-blue-400 dark:hover:text-blue-300 transition-colors"
               >
                 {item}
               </button>

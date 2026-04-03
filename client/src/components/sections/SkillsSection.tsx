@@ -49,31 +49,31 @@ const SKILL_CATEGORIES = [
 ];
 
 const LEVEL_COLORS: Record<string, string> = {
-  "주력": "bg-blue-100 text-blue-700 border-blue-200",
-  "활용 가능": "bg-green-100 text-green-700 border-green-200",
-  "학습 중": "bg-amber-100 text-amber-700 border-amber-200",
+  "주력": "bg-blue-100 dark:bg-blue-950 text-blue-700 dark:text-blue-300 border-blue-200 dark:border-blue-800",
+  "활용 가능": "bg-green-100 dark:bg-green-950 text-green-700 dark:text-green-300 border-green-200 dark:border-green-800",
+  "학습 중": "bg-amber-100 dark:bg-amber-950 text-amber-700 dark:text-amber-300 border-amber-200 dark:border-amber-800",
 };
 
 const CATEGORY_COLORS: Record<string, { bg: string; border: string; text: string; dot: string }> = {
-  blue: { bg: "bg-blue-50", border: "border-blue-100", text: "text-blue-700", dot: "bg-blue-500" },
-  purple: { bg: "bg-purple-50", border: "border-purple-100", text: "text-purple-700", dot: "bg-purple-500" },
-  green: { bg: "bg-green-50", border: "border-green-100", text: "text-green-700", dot: "bg-green-500" },
-  orange: { bg: "bg-orange-50", border: "border-orange-100", text: "text-orange-700", dot: "bg-orange-500" },
-  slate: { bg: "bg-slate-50", border: "border-slate-200", text: "text-slate-700", dot: "bg-slate-500" },
+  blue: { bg: "bg-blue-50 dark:bg-blue-950", border: "border-blue-100 dark:border-blue-800", text: "text-blue-700 dark:text-blue-300", dot: "bg-blue-500" },
+  purple: { bg: "bg-purple-50 dark:bg-purple-950", border: "border-purple-100 dark:border-purple-800", text: "text-purple-700 dark:text-purple-300", dot: "bg-purple-500" },
+  green: { bg: "bg-green-50 dark:bg-green-950", border: "border-green-100 dark:border-green-800", text: "text-green-700 dark:text-green-300", dot: "bg-green-500" },
+  orange: { bg: "bg-orange-50 dark:bg-orange-950", border: "border-orange-100 dark:border-orange-800", text: "text-orange-700 dark:text-orange-300", dot: "bg-orange-500" },
+  slate: { bg: "bg-slate-50 dark:bg-slate-800", border: "border-slate-200 dark:border-slate-700", text: "text-slate-700 dark:text-slate-300", dot: "bg-slate-500" },
 };
 
 export default function SkillsSection() {
   return (
-    <section id="skills" className="py-24 bg-white">
+    <section id="skills" className="py-24 bg-white dark:bg-slate-950">
       <div className="container">
         {/* Section Header */}
         <div className="reveal mb-16">
-          <p className="text-sm font-mono text-blue-600 mb-2 tracking-widest uppercase">02. Skills</p>
-          <h2 className="text-3xl lg:text-4xl font-extrabold text-slate-900 mb-4">
+          <p className="text-sm font-mono text-blue-600 dark:text-blue-400 mb-2 tracking-widest uppercase">02. Skills</p>
+          <h2 className="text-3xl lg:text-4xl font-extrabold text-slate-900 dark:text-white mb-4">
             <span className="section-dot">기술 스택</span>
           </h2>
           <div className="w-12 h-1 bg-blue-600 rounded-full" />
-          <p className="mt-4 text-slate-500 max-w-xl">
+          <p className="mt-4 text-slate-500 dark:text-slate-400 max-w-xl">
             현재까지 학습하고 프로젝트에 활용한 기술들입니다. 지속적으로 새로운 기술을 학습하고 있습니다.
           </p>
         </div>
@@ -94,7 +94,7 @@ export default function SkillsSection() {
             return (
               <div
                 key={cat.category}
-                className={`reveal p-6 rounded-xl border ${colors.bg} ${colors.border} hover:shadow-md hover:bg-blue-50 hover:border-blue-200 transition-all duration-300`}
+                className={`reveal p-6 rounded-xl border ${colors.bg} ${colors.border} hover:shadow-md hover:bg-blue-50 dark:hover:bg-blue-950 hover:border-blue-200 dark:hover:border-blue-700 transition-all duration-300`}
                 style={{ transitionDelay: `${i * 0.08}s` }}
               >
                 <div className="flex items-center gap-2 mb-4">
@@ -106,9 +106,9 @@ export default function SkillsSection() {
                 <div className="flex flex-wrap gap-2">
                   {cat.skills.map((skill) => (
                     <div key={skill.name} className="flex flex-col items-start gap-1">
-                      <div className="flex items-center gap-2 px-3 py-2 bg-white rounded-lg border border-white/80 shadow-sm hover:scale-110 hover:shadow-md transition-transform duration-300 cursor-pointer">
+                      <div className="flex items-center gap-2 px-3 py-2 bg-white dark:bg-slate-800 rounded-lg border border-white/80 dark:border-slate-700 shadow-sm hover:scale-110 hover:shadow-md transition-transform duration-300 cursor-pointer">
                         <span className="text-sm">{skill.icon}</span>
-                        <span className="font-semibold text-slate-800 text-sm">{skill.name}</span>
+                        <span className="font-semibold text-slate-800 dark:text-white text-sm">{skill.name}</span>
                       </div>
                       <span className={`text-xs px-2 py-0.5 rounded-full border font-medium ${LEVEL_COLORS[skill.level]}`}>
                         {skill.level}

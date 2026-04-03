@@ -35,16 +35,16 @@ const PROJECTS = [
 
 export default function ProjectsSection() {
   return (
-    <section id="projects" className="py-24 bg-slate-50">
+    <section id="projects" className="py-24 bg-slate-50 dark:bg-slate-900">
       <div className="container">
         {/* Section Header */}
         <div className="reveal mb-16">
-          <p className="text-sm font-mono text-blue-600 mb-2 tracking-widest uppercase">03. Projects</p>
-          <h2 className="text-3xl lg:text-4xl font-extrabold text-slate-900 mb-4">
+          <p className="text-sm font-mono text-blue-600 dark:text-blue-400 mb-2 tracking-widest uppercase">03. Projects</p>
+          <h2 className="text-3xl lg:text-4xl font-extrabold text-slate-900 dark:text-white mb-4">
             <span className="section-dot">프로젝트</span>
           </h2>
           <div className="w-12 h-1 bg-blue-600 rounded-full" />
-          <p className="mt-4 text-slate-500 max-w-xl">
+          <p className="mt-4 text-slate-500 dark:text-slate-400 max-w-xl">
             직접 기획하고 개발한 프로젝트들입니다. 각 프로젝트를 통해 얻은 경험과 배운 점을 함께 정리했습니다.
           </p>
         </div>
@@ -54,7 +54,7 @@ export default function ProjectsSection() {
           {PROJECTS.map((project, i) => (
             <div
               key={project.id}
-              className="reveal project-card bg-white rounded-2xl border border-slate-100 shadow-sm overflow-hidden transition-all duration-300 hover:bg-blue-50 hover:border-blue-200"
+              className="reveal project-card bg-white dark:bg-slate-800 rounded-2xl border border-slate-100 dark:border-slate-700 shadow-sm overflow-hidden transition-all duration-300 hover:bg-blue-50 dark:hover:bg-blue-950 hover:border-blue-200 dark:hover:border-blue-700"
               style={{ transitionDelay: `${i * 0.1}s` }}
             >
               <div className="grid grid-cols-1 lg:grid-cols-5 gap-0">
@@ -82,15 +82,15 @@ export default function ProjectsSection() {
                   {/* Title */}
                   <div className="flex items-start justify-between mb-3">
                     <div>
-                      <h3 className="text-2xl font-extrabold text-slate-900 mb-1">{project.title}</h3>
-                      <p className="text-blue-600 font-medium text-sm">{project.subtitle}</p>
+                      <h3 className="text-2xl font-extrabold text-slate-900 dark:text-white mb-1">{project.title}</h3>
+                      <p className="text-blue-600 dark:text-blue-400 font-medium text-sm">{project.subtitle}</p>
                     </div>
                     <div className="flex gap-2 ml-4">
                       <a
                         href={project.github}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="p-2 rounded-lg bg-slate-100 text-slate-600 hover:bg-blue-50 hover:text-blue-600 transition-colors"
+                        className="p-2 rounded-lg bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-400 hover:bg-blue-50 dark:hover:bg-blue-950 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
                         aria-label="GitHub"
                       >
                         <Github className="w-4 h-4" />
@@ -100,7 +100,7 @@ export default function ProjectsSection() {
                           href={project.demo}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="p-2 rounded-lg bg-slate-100 text-slate-600 hover:bg-blue-50 hover:text-blue-600 transition-colors"
+                          className="p-2 rounded-lg bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-400 hover:bg-blue-50 dark:hover:bg-blue-950 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
                           aria-label="Demo"
                         >
                           <ExternalLink className="w-4 h-4" />
@@ -110,7 +110,7 @@ export default function ProjectsSection() {
                   </div>
 
                   {/* Description */}
-                  <p className="text-slate-600 text-sm leading-relaxed mb-5">{project.description}</p>
+                  <p className="text-slate-600 dark:text-slate-300 text-sm leading-relaxed mb-5">{project.description}</p>
 
                   {/* Tech stack */}
                   <div className="flex flex-wrap gap-2 mb-5">
@@ -121,7 +121,7 @@ export default function ProjectsSection() {
 
                   {/* Features */}
                   <div className="mb-5">
-                    <h4 className="text-xs font-mono text-slate-400 uppercase tracking-wider mb-2">주요 기능</h4>
+                    <h4 className="text-xs font-mono text-slate-400 dark:text-slate-500 uppercase tracking-wider mb-2">주요 기능</h4>
                     <ul className="space-y-1">
                       {project.features.map((f) => (
                         <li key={f} className="flex items-center gap-2 text-sm text-slate-600">
@@ -133,11 +133,11 @@ export default function ProjectsSection() {
                   </div>
 
                   {/* Learnings */}
-                  <div className="pt-5 border-t border-slate-100">
-                    <h4 className="text-xs font-mono text-slate-400 uppercase tracking-wider mb-3">배운 점</h4>
+                  <div className="pt-5 border-t border-slate-100 dark:border-slate-700">
+                    <h4 className="text-xs font-mono text-slate-400 dark:text-slate-500 uppercase tracking-wider mb-3">배운 점</h4>
                     <div className="space-y-2">
                       {project.learnings.map((l) => (
-                        <div key={l.text} className="flex items-center gap-2 text-sm text-slate-700">
+                        <div key={l.text} className="flex items-center gap-2 text-sm text-slate-700 dark:text-slate-300">
                           <l.icon className="w-4 h-4 text-blue-500 flex-shrink-0" />
                           {l.text}
                         </div>
@@ -152,13 +152,13 @@ export default function ProjectsSection() {
 
         {/* More projects placeholder */}
         <div className="reveal mt-10 text-center">
-          <div className="inline-flex items-center gap-2 px-6 py-4 bg-slate-50 rounded-xl border border-dashed border-slate-200 text-slate-400">
+          <div className="inline-flex items-center gap-2 px-6 py-4 bg-slate-50 dark:bg-slate-800 rounded-xl border border-dashed border-slate-200 dark:border-slate-700 text-slate-400 dark:text-slate-500">
             <span className="text-sm">더 많은 프로젝트는 GitHub에서 확인하세요</span>
             <a
               href="https://github.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-1 text-blue-600 font-medium hover:underline"
+              className="flex items-center gap-1 text-blue-600 dark:text-blue-400 font-medium hover:underline"
             >
               <Github className="w-4 h-4" />
               GitHub

@@ -24,7 +24,7 @@ export default function HeroSection() {
       }}
     >
       {/* Overlay */}
-      <div className="absolute inset-0 bg-white/60" />
+      <div className="absolute inset-0 bg-white/60 dark:bg-slate-950/60" />
 
       <div className="container relative z-10 pt-20 pb-16">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center min-h-[80vh]">
@@ -32,22 +32,22 @@ export default function HeroSection() {
           <div className="flex flex-col justify-center">
             {/* Status badge */}
             <div className="inline-flex items-center gap-2 mb-6 animate-fade-in-up">
-              <span className="flex items-center gap-1.5 px-3 py-1.5 bg-blue-50 border border-blue-200 rounded-full text-xs font-medium text-blue-700">
+              <span className="flex items-center gap-1.5 px-3 py-1.5 bg-blue-50 dark:bg-blue-950 border border-blue-200 dark:border-blue-800 rounded-full text-xs font-medium text-blue-700 dark:text-blue-300">
                 <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
                 구직 중 · Open to Work
               </span>
             </div>
 
             {/* Name */}
-            <h1 className="text-5xl lg:text-6xl font-extrabold text-slate-900 leading-tight mb-4 animate-fade-in-up-delay-1">
+            <h1 className="text-5xl lg:text-6xl font-extrabold text-slate-900 dark:text-white leading-tight mb-4 animate-fade-in-up-delay-1">
               안녕하세요,
               <br />
-              <span className="text-blue-600">김현탁</span>입니다.
+              <span className="text-blue-600 dark:text-blue-400">김현탁</span>입니다.
             </h1>
 
             {/* Tagline */}
             <div className="blueprint-accent mb-6 animate-fade-in-up-delay-2">
-              <p className="text-xl font-semibold text-slate-700 mb-1">
+              <p className="text-xl font-semibold text-slate-700 dark:text-slate-300 mb-1">
                 백엔드 개발자를 목표로 하는 개발자
               </p>
               <p className="text-slate-500 text-base leading-relaxed">
@@ -78,14 +78,14 @@ export default function HeroSection() {
                 href="https://github.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-white text-slate-700 font-semibold rounded-lg border border-slate-200 hover:border-blue-300 hover:text-blue-600 transition-all duration-200 hover:-translate-y-0.5"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-white text-slate-700 font-semibold rounded-lg border border-slate-200 hover:border-blue-300 hover:text-blue-600 dark:text-blue-400 transition-all duration-200 hover:-translate-y-0.5"
               >
                 <Github className="w-4 h-4" />
                 GitHub
               </a>
               <a
                 href="mailto:example@email.com"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-white text-slate-700 font-semibold rounded-lg border border-slate-200 hover:border-blue-300 hover:text-blue-600 transition-all duration-200 hover:-translate-y-0.5"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-white text-slate-700 font-semibold rounded-lg border border-slate-200 hover:border-blue-300 hover:text-blue-600 dark:text-blue-400 transition-all duration-200 hover:-translate-y-0.5"
               >
                 <Mail className="w-4 h-4" />
                 이메일
@@ -112,7 +112,7 @@ export default function HeroSection() {
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-bounce">
           <button
             onClick={scrollToAbout}
-            className="flex flex-col items-center gap-1 text-slate-400 hover:text-blue-600 transition-colors"
+            className="flex flex-col items-center gap-1 text-slate-400 hover:text-blue-600 dark:text-blue-400 transition-colors"
             aria-label="아래로 스크롤"
           >
             <span className="text-xs font-medium tracking-widest uppercase">Scroll</span>
