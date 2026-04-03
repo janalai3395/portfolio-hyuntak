@@ -106,7 +106,7 @@ export default function SkillsSection() {
                 <div className="flex flex-wrap gap-2">
                   {cat.skills.map((skill) => (
                     <div key={skill.name} className="flex flex-col items-start gap-1">
-                      <div className="flex items-center gap-2 px-3 py-2 bg-white rounded-lg border border-white/80 shadow-sm">
+                      <div className="flex items-center gap-2 px-3 py-2 bg-white rounded-lg border border-white/80 shadow-sm hover:scale-110 hover:shadow-md transition-transform duration-300 cursor-pointer">
                         <span className="text-sm">{skill.icon}</span>
                         <span className="font-semibold text-slate-800 text-sm">{skill.name}</span>
                       </div>
