@@ -1,8 +1,9 @@
 /**
  * ProjectsSection — Blueprint Developer style (Improved)
- * Card grid with project image + tagline, development story, tech reasoning, and problem-solution learnings
+ * Card grid with project image + tagline, development story, tech reasoning, problem-solution learnings, and GitHub code preview
  */
-import { Github, ExternalLink, AlertCircle, CheckCircle } from "lucide-react";
+import { Github, ExternalLink, AlertCircle, CheckCircle, Code2, ChevronDown } from "lucide-react";
+import { useState, useEffect } from "react";
 
 const DISCORD_BOT_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663482733063/4jaoiWKKMSWPdEtevUigzk/discord-bot-project-d42pJErLTUQtSJSs6BNN9G.webp";
 
@@ -35,12 +36,87 @@ const PROJECTS = [
         solution: "인덱싱과 쿼리 최적화를 통해 응답 시간을 50% 이상 단축",
       },
     ],
-    github: "https://github.com",
+    github: "https://github.com/janalai3395/discord_bot",
+    githubRepo: "janalai3395/discord_bot",
     demo: null,
     status: "완료",
     period: "2024",
   },
 ];
+
+// GitHub 코드 미리보기 컴포넌트
+function GitHubCodePreview({ repo }: { repo: string }) {
+  const [code, setCode] = useState<string | null>(null);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const [expanded, setExpanded] = useState(false);
+
+  const fetchCode = async () => {
+    if (code || loading) return;
+    
+    setLoading(true);
+    try {
+      // README 파일 먼저 시도
+      const response = await fetch(`https://api.github.com/repos/${repo}/readme`, {
+        headers: {
+          Accept: "application/vnd.github.v3.raw",
+        },
+      });
+
+      if (!response.ok) {
+        // README가 없으면 package.json 시도
+        const pkgResponse = await fetch(`https://api.github.com/repos/${repo}/contents/package.json`, {
+          headers: {
+            Accept: "application/vnd.github.v3.raw",
+          },
+        });
+
+        if (!pkgResponse.ok) throw new Error("코드를 불러올 수 없습니다");
+        
+        const pkgData = await pkgResponse.text();
+        setCode(pkgData.substring(0, 500) + "\n...");
+      } else {
+        const data = await response.text();
+        setCode(data.substring(0, 800) + "\n...");
+      }
+    } catch (err) {
+      setError("GitHub 데이터를 불러올 수 없습니다");
+      console.error(err);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  return (
+    <div className="mt-6 pt-6 border-t border-slate-100 dark:border-slate-700">
+      <button
+        onClick={() => {
+          setExpanded(!expanded);
+          if (!expanded && !code) fetchCode();
+        }}
+        className="flex items-center gap-2 text-sm font-semibold text-slate-700 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+      >
+        <Code2 className="w-4 h-4" />
+        코드 미리보기
+        <ChevronDown className={`w-4 h-4 transition-transform ${expanded ? "rotate-180" : ""}`} />
+      </button>
+
+      {expanded && (
+        <div className="mt-4 bg-slate-900 dark:bg-slate-950 rounded-lg p-4 overflow-x-auto">
+          {loading ? (
+            <p className="text-slate-400 text-sm">로딩 중...</p>
+          ) : error ? (
+            <p className="text-red-400 text-sm">{error}</p>
+          ) : code ? (
+            <pre className="text-slate-300 text-xs font-mono leading-relaxed whitespace-pre-wrap break-words">
+              {code}
+            </pre>
+          ) : null}
+        </div>
+      )}
+    </div>
+  );
+}
 
 export default function ProjectsSection() {
   return (
@@ -95,6 +171,7 @@ export default function ProjectsSection() {
                       rel="noopener noreferrer"
                       className="p-2.5 rounded-lg bg-white/10 backdrop-blur text-white hover:bg-white/20 transition-colors"
                       aria-label="GitHub"
+                      title="GitHub 저장소로 이동"
                     >
                       <Github className="w-5 h-5" />
                     </a>
@@ -169,6 +246,9 @@ export default function ProjectsSection() {
                     ))}
                   </div>
                 </div>
+
+                {/* GitHub Code Preview */}
+                {project.githubRepo && <GitHubCodePreview repo={project.githubRepo} />}
               </div>
             </div>
           ))}
@@ -179,7 +259,7 @@ export default function ProjectsSection() {
           <div className="inline-flex items-center gap-2 px-6 py-4 bg-slate-50 dark:bg-slate-800 rounded-xl border border-dashed border-slate-200 dark:border-slate-700 text-slate-400 dark:text-slate-500">
             <span className="text-sm">더 많은 프로젝트는 GitHub에서 확인하세요</span>
             <a
-              href="https://github.com"
+              href="https://github.com/janalai3395"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-1 text-blue-600 dark:text-blue-400 font-medium hover:underline"
