@@ -14,13 +14,31 @@ const ACTIVITIES = [
     tags: ["팀 협업", "개발 스터디", "프로젝트"],
     color: "blue",
   },
+  {
+    type: "club",
+    icon: Users,
+    title: "만화 A-L동아리 부회장",
+    period: "2025년",
+    description: "만화 A-L동아리에서 부회장으로 활동하며 동아리 운영과 회원들과의 협력을 주도했습니다.",
+    tags: ["동아리 운영", "리더십", "협력"],
+    color: "blue",
+  },
+  {
+    type: "club",
+    icon: Users,
+    title: "만화 A-L동아리 회장",
+    period: "2026년",
+    description: "만화 A-L동아리의 회장으로서 동아리의 전반적인 운영과 발전을 주도하고 있습니다.",
+    tags: ["리더십", "동아리 운영", "기획"],
+    color: "blue",
+  },
 ];
 
 const EDUCATION = [
   {
     icon: GraduationCap,
-    school: "재학 중인 대학교",
-    major: "컴퓨터 관련 학과",
+    school: "신라대학교",
+    major: "컴퓨터공학과",
     period: "재학 중",
     studentId: "202395013",
   },
