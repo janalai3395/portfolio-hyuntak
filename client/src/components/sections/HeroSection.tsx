@@ -75,7 +75,7 @@ export default function HeroSection() {
                 프로젝트 보기
               </button>
               <a
-                href="https://github.com"
+                href="https://github.com/janalai3395"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-6 py-3 bg-white text-slate-700 font-semibold rounded-lg border border-slate-200 hover:border-blue-300 hover:text-blue-600 dark:text-blue-400 transition-all duration-200 hover:-translate-y-0.5"
@@ -84,7 +84,7 @@ export default function HeroSection() {
                 GitHub
               </a>
               <a
-                href="mailto:example@email.com"
+                href="mailto:gusxkrtkfkd@gmail.com"
                 className="inline-flex items-center gap-2 px-6 py-3 bg-white text-slate-700 font-semibold rounded-lg border border-slate-200 hover:border-blue-300 hover:text-blue-600 dark:text-blue-400 transition-all duration-200 hover:-translate-y-0.5"
               >
                 <Mail className="w-4 h-4" />
@@ -96,8 +96,8 @@ export default function HeroSection() {
           {/* Right: Code Editor Decoration */}
           <div className="hidden lg:flex items-center justify-center animate-fade-in-up-delay-2">
             <div className="relative">
-              {/* Glow effect */}
-              <div className="absolute -inset-4 bg-blue-400/20 rounded-2xl blur-2xl" />
+              {/* Subtle shadow */}
+              <div className="absolute -inset-4 bg-slate-400/10 rounded-2xl blur-2xl" />
               <img
                 src={CODE_EDITOR}
                 alt="코드 에디터"

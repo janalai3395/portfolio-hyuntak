@@ -69,7 +69,7 @@ export default function AboutSection() {
               </div>
               <div className="p-4 bg-white dark:bg-slate-800 rounded-lg border border-slate-100 dark:border-slate-700">
                 <p className="text-xs text-slate-400 dark:text-slate-500 font-mono mb-1">전공</p>
-                <p className="font-semibold text-slate-800 dark:text-white">컴퓨터 관련 학과</p>
+                <p className="font-semibold text-slate-800 dark:text-white">컴퓨터공학과</p>
               </div>
               <div className="p-4 bg-blue-50 dark:bg-blue-950 rounded-lg border border-blue-100 dark:border-blue-800 col-span-2">
                 <p className="text-xs text-blue-500 dark:text-blue-400 font-mono mb-1">목표</p>
